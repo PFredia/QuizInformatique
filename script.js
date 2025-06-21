@@ -144,15 +144,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const allHomeButtons = document.querySelectorAll('.home-icon-btn');
 
     // Ajout pour les effets sonores
-    const goodSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/main/audio/good.mp3');
-    const badSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/main/audio/bad.mp3');
-    const quizStartSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/main/audio/quiz_start.mp3');
-    const quizFinishSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/main/audio/quiz_finish.mp3');
-    const timeUpSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/main/audio/time_up.mp3');
-    const levelUnlockedSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/main/audio/level_unlocked.mp3');
-    const victorySound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/main/audio/victory.mp3');
-    const failureSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/main/audio/failure.mp3');
-    const tickSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/main/audio/tick.mp3');
+    const goodSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/master/audio/good.mp3');
+    const badSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/master/audio/bad.mp3');
+    const quizStartSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/master/audio/quiz_start.mp3');
+    const quizFinishSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/master/audio/quiz_finish.mp3');
+    const timeUpSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/master/audio/time_up.mp3');
+    const levelUnlockedSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/master/audio/level_unlocked.mp3');
+    const victorySound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/master/audio/victory.mp3');
+    const failureSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/master/audio/failure.mp3');
+    const tickSound = new Audio('https://raw.githubusercontent.com/PFredia/QuizInformatique/master/audio/tick.mp3');
 
     quizStartSound.loop = true;
 
