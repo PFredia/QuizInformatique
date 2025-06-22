@@ -95,8 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
         currentQuizData: [],
         currentQuestionIndex: 0,
         score: 0,
-        timer: null,
-        timeLeft: 60,
         totalPoints: 0,
         selectedCategory: null,
         currentLevel: null,
@@ -125,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
         progressBar: document.getElementById('progress-bar'),
         questionCounter: document.getElementById('question-counter'),
         currentScore: document.getElementById('current-score'),
-        timer: document.getElementById('timer'),
         questionText: document.getElementById('question-text'),
         optionsContainer: document.getElementById('options-container'),
         nextBtn: document.getElementById('next-btn'),
@@ -252,12 +249,10 @@ document.addEventListener('DOMContentLoaded', () => {
         appState.currentQuizData = generateMCQ(questionsForLevel).sort(() => 0.5 - Math.random());
         appState.currentQuestionIndex = 0;
         appState.score = 0;
-        appState.timeLeft = appState.currentQuizData.length * 20;
 
         quizElements.nextBtn.disabled = true;
         switchScreen('quiz');
         showQuestion();
-        startTimer();
 
         if (level) {
             appState.currentLevel = level;
@@ -319,26 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function startTimer() {
-        clearInterval(appState.timer);
-        appState.timer = setInterval(() => {
-            appState.timeLeft--;
-            const minutes = Math.floor(appState.timeLeft / 60);
-            const seconds = appState.timeLeft % 60;
-            quizElements.timer.textContent = `⏱️ ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-            if (appState.timeLeft <= 10 && appState.timeLeft > 0) {
-                tickSound.play(); // Bip pour les 10 dernières secondes
-            }
-            if (appState.timeLeft <= 0) {
-                clearInterval(appState.timer);
-                timeUpSound.play(); // Son temps écoulé
-                showResult();
-            }
-        }, 1000);
-    }
-    
     function showResult() {
-        clearInterval(appState.timer);
         switchScreen('result');
         quizFinishSound.play(); // Son de fin de quiz
         const totalQuestions = appState.currentQuizData.length;
